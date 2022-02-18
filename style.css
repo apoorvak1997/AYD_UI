@@ -73,7 +73,7 @@ mix-blend-mode: overlay;
     bottom: -74.35%; */
     
     width:100%;
-    height: 180px;
+    height: 230px;
     background: #464C68;
 
 }
@@ -392,16 +392,12 @@ margin-left: 160px;
   font-style: normal;
   color: #333333;
   margin-left: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
-  margin-bottom: 10px;
-  position: absolute;
 
 
 }
@@ -464,41 +460,7 @@ margin-left: 160px;
   border-radius: 8px;
 }
 
-.story-icons-1{
-  padding:5px;
-  position:absolute;
-  left: 30.37%;
-right: 10.88%;
-top: 20.41%;
-bottom: 20.41%;
-}
 
-.story-icons-2{
-  padding:5px;
-  position: absolute;
-  left: 22.56%;
-  right: 29.28%;
-  top: 22.92%;
-  bottom: 50%;
-}
-
-.story-icons-3{
-  padding:5px;
-  position: absolute;
-left: 30.27%;
-right: 36.27%;
-top: 10.92%;
-bottom: 64.42%;
-}
-
-.story-icons-4{
-  padding:5px;
-  position: absolute;
-  left: 31.48%;
-  right: 5.83%;
-  top: 15.14%;
-  bottom: 7.91%;
-}
 
 
 
@@ -639,6 +601,7 @@ bottom: 64.42%;
   float: right;
   margin-left: 5px;
   position: absolute;
+  
   /* right: -8px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -654,6 +617,7 @@ bottom: 64.42%;
   font-size: 30px;
   float: right;
   color: #878C90;
+  margin-top:-1%;
 }
 
 .active1:after {
@@ -830,14 +794,20 @@ bottom: 64.42%;
 .modal-content {
   /* max-height: calc(100vh - 80px);
    overflow-y: auto; */
-   position:absolute;
+   /* position:absolute;
    left:10%;
    /* /* top:1%; */
-   bottom:1%;
+   border-radius:10px 10px 0px 0px;
+   overflow:hidden;
+   z-index: 1000;
+   position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
-  display: block;
+  /* display: block;
   width: 80%;
-  max-width: -webkit-fill-available;
+  max-width: -webkit-fill-available; */
 }
 
 .rectangle{
@@ -878,7 +848,7 @@ bottom: 64.42%;
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content,
+/* .modal-content,
 #caption {
   animation-name: zoom;
   animation-duration: 0.6s;
@@ -891,7 +861,7 @@ bottom: 64.42%;
   to {
     transform: scale(1);
   }
-}
+} */
 
 /* The Close Button */
 .close {
@@ -1406,11 +1376,14 @@ bottom: 64.42%;
   cursor: pointer;
 }
 
-#op2, #op3, #op4{
+#op2, #op3, #op4, #op5{
+  flex-direction: column;
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  padding:10px;
 }
+
 /*
 #op1:hover{
     background: #6C1031;
@@ -2119,6 +2092,8 @@ bottom: 64.42%;
 
 /* Modal Content/Box */
 .modal-content {
+  max-width:calc(100% - 80px);
+  max-height:calc(100% - 50px);
   margin: 0 auto; /* 15% from the top and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
@@ -2233,6 +2208,8 @@ margin: 0px 30px;
 .left{
   width:60%;
   padding:20px;
+  font-family: "Oracle Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size:14px;
 }
 
 .right{
@@ -2241,6 +2218,9 @@ margin: 0px 30px;
   width:40%;
   padding:20px;
   font-family: "Oracle Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+.right ol{
+  list-style-position: inside;
 }
 .right h5{
  
@@ -2261,4 +2241,64 @@ margin: 0px 30px;
 
 .card-details{
   list-style-type: disc;
+}
+
+.integration-details{
+  display:flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oracle Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.modal-button{
+  background-color: transparent;
+  border:none;
+  
+  color:#0572ce;
+
+}
+.modal-button:hover{
+  color:black;
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+.button-links{
+  display:block;
+  text-decoration: none;
+  color:black;
+  width:100%;
+}
+
+.banner1{
+  background-color: #464C68;
+  background-image: url(./files/image.png);
+  height: 290px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: overlay;
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+
+}
+
+.banner1 h1{
+  margin-left:5%;
+  font-family: Georgia;
+  font-size: 45px;
+  line-height: 53px;
+  
+  color: #FFFFFF;
+}
+
+.banner1 p{
+  margin-left:5%;
+  width:50%;
+  color: #FFFFFF;
+  font-family: "Oracle Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size:15px;
+
 }

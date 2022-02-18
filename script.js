@@ -1,34 +1,32 @@
 
-//slides
-// var slideIndex = 1;
-// showSlides(slideIndex);
 
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+var modals = document.getElementsByClassName("modal");
+var modalOpenBtn = document.getElementsByClassName("modal-button");
+var currentModal = null;
 
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+// Function to open modal by id
+function openModal(id) {
+  for (i = 0; i < modals.length; i++) {
+    if (modals[i].getAttribute('id') == id) {
+      currentModal = modals[i];
+      currentModal.style.display = "block";
+      break;
+    }
+  }
+  return false;
+}
 
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}
-//     if (n < 1) {slideIndex = slides.length}
-//     for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//     }
-//     for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }
+// When the user clicks the button, open modal with the same id
+modalOpenBtn.onclick = function() {
+  let currentID = modalOpenBtn.getAttribute('id');
+  openModal(currentID);
+}
 
-function redirect(url){
-  location.replace(url);
+// When the user clicks anywhere outside of the modal or the X, close
+window.onclick = function(event) {
+  if (event.target == currentModal || event.target.getAttribute('class') == 'modalClose') {
+    currentModal.style.display = "none";
+  }
 }
 
 
@@ -158,38 +156,7 @@ for (i=0; i<accordion.length; i++) {
     this.classList.toggle('active')
   })
 }
-//pic 1
-//var modal = document.getElementById("myModal");
 
-//var img = document.getElementById("myImg");
-//var modalImg = document.getElementById("img01");
-//var captionText = document.getElementById("caption");
-//img.onclick = function pop(){
-//  modal.style.display = "block";
-//  modalImg.src = this.src;
-//  captionText.innerHTML = this.alt;
-//}
-//var span = document.getElementsByClassName("close")[0];
-//span.onclick = function() {
-//  modal.style.display = "none";
-//}
-
-// pic 2
-//
-// var modal = document.getElementById("myModal");
-// var btn = document.getElementById("myBtn");
-// var span = document.getElementsByClassName("close")[0];
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
 
 // Get the button that opens the modal
 var btn = document.querySelectorAll("a.modal-button");
@@ -227,22 +194,6 @@ window.onclick = function(event) {
      }
     }
 }
-// function IBMMergeOpen(){
-// var modal = document.getElementById("myModal1");
-// var btn = document.getElementById("myBtn1");
-// var span = document.getElementsByClassName("close1")[0];
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-// }
 
 // Oracle Content Cards
 function openinfo(evt, cardname) {
@@ -280,28 +231,6 @@ function opencinfo(evt, cardcname) {
 document.getElementById("defaultOpen2").click();
 
 
-//Button Hide Functions
-//function pickchange(butid){
-//  var xs = document.getElementById(butid);
-//  if (xs.style.display === "none") {
-//    xs.style.display = "block";
-//    xs.style.transition = "0.5s";
-//  } else {
-//    xs.style.display = "none";
-//    xs.style.transition = "0.5s";
-//  }
-//}
-
-//function normalpick(butid){
-//  var xs = document.getElementById(butid);
-//  if (xs.style.display === "none") {
-//    xs.style.display = "block";
-//    xs.style.transition = "0.5s";
-//  } else {
-//    xs.style.display = "none";
-//    xs.style.transition = "0.5s";
-//  }
-//}
 
 
 //sticky nav bar
